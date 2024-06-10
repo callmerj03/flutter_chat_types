@@ -144,6 +144,7 @@ abstract class AudioMessage extends Message {
     Status? status,
     int? updatedAt,
     String? uri,
+    String? reaction,
     List<double>? waveForm,
   });
 
@@ -180,6 +181,7 @@ class _AudioMessage extends AudioMessage {
     dynamic createdAt = _Unset,
     Duration? duration,
     String? id,
+    String? reaction,
     dynamic metadata = _Unset,
     dynamic mimeType = _Unset,
     String? name,

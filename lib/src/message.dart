@@ -40,6 +40,7 @@ abstract class Message extends Equatable {
     this.roomId,
     this.showStatus,
     this.status,
+    this.reaction,
     required this.type,
     this.updatedAt,
   });
@@ -74,6 +75,9 @@ abstract class Message extends Equatable {
 
   /// User who sent this message.
   final User author;
+
+  /// reaction on message
+  final String? reaction;
 
   /// Created message timestamp, in ms.
   final int? createdAt;
@@ -116,6 +120,7 @@ abstract class Message extends Equatable {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String? reaction,
     int? updatedAt,
   });
 

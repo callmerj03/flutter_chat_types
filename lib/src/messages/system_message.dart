@@ -70,6 +70,7 @@ abstract class SystemMessage extends Message {
     User? author,
     int? createdAt,
     String? id,
+    String? reaction,
     Map<String, dynamic>? metadata,
     String? remoteId,
     Message? repliedMessage,
@@ -115,6 +116,7 @@ class _SystemMessage extends SystemMessage {
     dynamic showStatus = _Unset,
     dynamic status = _Unset,
     String? text,
+    String? reaction,
     dynamic updatedAt = _Unset,
   }) =>
       _SystemMessage(
