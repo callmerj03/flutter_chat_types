@@ -12,7 +12,7 @@ part 'system_message.g.dart';
 @immutable
 abstract class SystemMessage extends Message {
   /// Creates a custom message.
-  const SystemMessage._({f
+  const SystemMessage._({
     super.author = const User(id: 'system'),
     super.createdAt,
     required super.id,
