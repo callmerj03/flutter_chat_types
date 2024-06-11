@@ -59,6 +59,7 @@ abstract class TextMessage extends Message {
     required PartialText partialText,
     String? remoteId,
     String? roomId,
+    String? reaction,
     bool? showStatus,
     Status? status,
     int? updatedAt,
@@ -67,6 +68,7 @@ abstract class TextMessage extends Message {
         author: author,
         createdAt: createdAt,
         id: id,
+        reaction: reaction,
         metadata: partialText.metadata,
         previewData: partialText.previewData,
         remoteId: remoteId,
@@ -99,6 +101,7 @@ abstract class TextMessage extends Message {
         showStatus,
         status,
         text,
+        reaction,
         updatedAt,
       ];
 

@@ -12,12 +12,13 @@ part 'system_message.g.dart';
 @immutable
 abstract class SystemMessage extends Message {
   /// Creates a custom message.
-  const SystemMessage._({
+  const SystemMessage._({f
     super.author = const User(id: 'system'),
     super.createdAt,
     required super.id,
     super.metadata,
     super.remoteId,
+    super.reaction,
     super.repliedMessage,
     super.roomId,
     super.showStatus,
@@ -36,6 +37,7 @@ abstract class SystemMessage extends Message {
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
+    String? reaction,
     Status? status,
     required String text,
     MessageType? type,
@@ -57,6 +59,7 @@ abstract class SystemMessage extends Message {
         id,
         metadata,
         remoteId,
+        reaction,
         repliedMessage,
         roomId,
         showStatus,
@@ -97,6 +100,7 @@ class _SystemMessage extends SystemMessage {
     super.remoteId,
     super.repliedMessage,
     super.roomId,
+    super.reaction,
     super.showStatus,
     super.status,
     required super.text,
@@ -127,6 +131,7 @@ class _SystemMessage extends SystemMessage {
             ? this.metadata
             : metadata as Map<String, dynamic>?,
         remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
+        reaction:reaction,
         repliedMessage: repliedMessage == _Unset
             ? this.repliedMessage
             : repliedMessage as Message?,

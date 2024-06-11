@@ -20,6 +20,7 @@ abstract class UnsupportedMessage extends Message {
     required super.id,
     super.metadata,
     super.remoteId,
+    super.reaction,
     super.repliedMessage,
     super.roomId,
     super.showStatus,
@@ -34,6 +35,7 @@ abstract class UnsupportedMessage extends Message {
     required String id,
     Map<String, dynamic>? metadata,
     String? remoteId,
+    String? reaction,
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
@@ -54,6 +56,7 @@ abstract class UnsupportedMessage extends Message {
         id,
         metadata,
         remoteId,
+        reaction,
         repliedMessage,
         roomId,
         showStatus,
@@ -90,6 +93,7 @@ class _UnsupportedMessage extends UnsupportedMessage {
     required super.id,
     super.metadata,
     super.remoteId,
+    super.reaction,
     super.repliedMessage,
     super.roomId,
     super.showStatus,
@@ -120,6 +124,7 @@ class _UnsupportedMessage extends UnsupportedMessage {
             ? this.metadata
             : metadata as Map<String, dynamic>?,
         remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
+        reaction : reaction,
         repliedMessage: repliedMessage == _Unset
             ? this.repliedMessage
             : repliedMessage as Message?,
