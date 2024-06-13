@@ -17,6 +17,7 @@ CustomMessage _$CustomMessageFromJson(Map<String, dynamic> json) =>
           ? null
           : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
       roomId: json['roomId'] as String?,
+      reaction: json['reaction'] as String?,
       showStatus: json['showStatus'] as bool?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
@@ -38,6 +39,7 @@ Map<String, dynamic> _$CustomMessageToJson(CustomMessage instance) {
   val['id'] = instance.id;
   writeNotNull('metadata', instance.metadata);
   writeNotNull('remoteId', instance.remoteId);
+  writeNotNull('reaction', instance.reaction);
   writeNotNull('repliedMessage', instance.repliedMessage?.toJson());
   writeNotNull('roomId', instance.roomId);
   writeNotNull('showStatus', instance.showStatus);
