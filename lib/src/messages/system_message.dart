@@ -19,6 +19,7 @@ abstract class SystemMessage extends Message {
     super.metadata,
     super.remoteId,
     super.reaction,
+    super.isDeleted,
     super.repliedMessage,
     super.roomId,
     super.showStatus,
@@ -37,6 +38,7 @@ abstract class SystemMessage extends Message {
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
+    bool? isDeleted,
     String? reaction,
     Status? status,
     required String text,
@@ -60,6 +62,7 @@ abstract class SystemMessage extends Message {
         metadata,
         remoteId,
         reaction,
+        isDeleted,
         repliedMessage,
         roomId,
         showStatus,
@@ -79,6 +82,7 @@ abstract class SystemMessage extends Message {
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
+    bool? isDeleted,
     Status? status,
     String? text,
     int? updatedAt,
@@ -101,6 +105,7 @@ class _SystemMessage extends SystemMessage {
     super.repliedMessage,
     super.roomId,
     super.reaction,
+    super.isDeleted,
     super.showStatus,
     super.status,
     required super.text,
@@ -121,6 +126,7 @@ class _SystemMessage extends SystemMessage {
     dynamic status = _Unset,
     String? text,
     String? reaction,
+    bool? isDeleted,
     dynamic updatedAt = _Unset,
   }) =>
       _SystemMessage(
@@ -132,6 +138,7 @@ class _SystemMessage extends SystemMessage {
             : metadata as Map<String, dynamic>?,
         remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
         reaction:reaction,
+        isDeleted:isDeleted,
         repliedMessage: repliedMessage == _Unset
             ? this.repliedMessage
             : repliedMessage as Message?,

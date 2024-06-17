@@ -21,6 +21,7 @@ FileMessage _$FileMessageFromJson(Map<String, dynamic> json) => FileMessage(
       roomId: json['roomId'] as String?,
       reaction: json['reaction'] as String?,
       showStatus: json['showStatus'] as bool?,
+      isDeleted: json['isDeleted'] as bool?,
       size: json['size'] as num,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
@@ -47,6 +48,7 @@ Map<String, dynamic> _$FileMessageToJson(FileMessage instance) {
   writeNotNull('roomId', instance.roomId);
   writeNotNull('showStatus', instance.showStatus);
   writeNotNull('reaction', instance.reaction);
+  writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('updatedAt', instance.updatedAt);

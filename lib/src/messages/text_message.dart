@@ -22,6 +22,7 @@ abstract class TextMessage extends Message {
     super.remoteId,
     super.repliedMessage,
     super.reaction,
+    super.isDeleted,
     super.roomId,
     super.showStatus,
     super.status,
@@ -39,6 +40,7 @@ abstract class TextMessage extends Message {
     String? remoteId,
     Message? repliedMessage,
     String? reaction,
+    bool? isDeleted,
     String? roomId,
     bool? showStatus,
     Status? status,
@@ -61,6 +63,7 @@ abstract class TextMessage extends Message {
     String? roomId,
     String? reaction,
     bool? showStatus,
+    bool? isDeleted,
     Status? status,
     int? updatedAt,
   }) =>
@@ -69,6 +72,7 @@ abstract class TextMessage extends Message {
         createdAt: createdAt,
         id: id,
         reaction: reaction,
+        isDeleted: isDeleted,
         metadata: partialText.metadata,
         previewData: partialText.previewData,
         remoteId: remoteId,
@@ -102,6 +106,7 @@ abstract class TextMessage extends Message {
         status,
         text,
         reaction,
+        isDeleted,
         updatedAt,
       ];
 
@@ -116,6 +121,7 @@ abstract class TextMessage extends Message {
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
+    bool? isDeleted,
     Status? status,
     String? reaction,
     String? text,
@@ -138,6 +144,7 @@ class _TextMessage extends TextMessage {
     super.remoteId,
     super.repliedMessage,
     super.reaction,
+    super.isDeleted,
     super.roomId,
     super.showStatus,
     super.status,
@@ -157,6 +164,7 @@ class _TextMessage extends TextMessage {
     dynamic repliedMessage = _Unset,
     dynamic roomId = _Unset,
     String? reaction,
+    bool? isDeleted,
     dynamic showStatus = _Unset,
     dynamic status = _Unset,
     String? text,
@@ -164,6 +172,7 @@ class _TextMessage extends TextMessage {
   }) =>
       _TextMessage(
         reaction: reaction,
+        isDeleted: isDeleted,
         author: author ?? this.author,
         createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
         id: id ?? this.id,

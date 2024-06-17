@@ -41,6 +41,7 @@ abstract class Message extends Equatable {
     this.showStatus,
     this.status,
     this.reaction,
+    this.isDeleted,
     required this.type,
     this.updatedAt,
   });
@@ -78,6 +79,9 @@ abstract class Message extends Equatable {
 
   /// reaction on message
   final String? reaction;
+
+  /// isDeleted status for message
+  final bool? isDeleted;
 
   /// Created message timestamp, in ms.
   final int? createdAt;
@@ -119,6 +123,7 @@ abstract class Message extends Equatable {
     Message? repliedMessage,
     String? roomId,
     bool? showStatus,
+    bool? isDeleted,
     Status? status,
     String? reaction,
     int? updatedAt,

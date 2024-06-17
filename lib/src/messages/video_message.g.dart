@@ -20,6 +20,7 @@ VideoMessage _$VideoMessageFromJson(Map<String, dynamic> json) => VideoMessage(
       roomId: json['roomId'] as String?,
       reaction: json['reaction'] as String?,
       showStatus: json['showStatus'] as bool?,
+      isDeleted: json['isDeleted'] as bool?,
       size: json['size'] as num,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
@@ -49,6 +50,7 @@ Map<String, dynamic> _$VideoMessageToJson(VideoMessage instance) {
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('height', instance.height);
   writeNotNull('reaction', instance.reaction);
   val['name'] = instance.name;
