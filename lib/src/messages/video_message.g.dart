@@ -18,7 +18,7 @@ VideoMessage _$VideoMessageFromJson(Map<String, dynamic> json) => VideoMessage(
           ? null
           : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
       roomId: json['roomId'] as String?,
-      reaction: json['reaction'] as String?,
+      reaction: json['reaction'],
       showStatus: json['showStatus'] as bool?,
       isDeleted: json['isDeleted'] as bool?,
       size: json['size'] as num,

@@ -20,7 +20,7 @@ TextMessage _$TextMessageFromJson(Map<String, dynamic> json) => TextMessage(
           : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
       roomId: json['roomId'] as String?,
       showStatus: json['showStatus'] as bool?,
-      reaction: json['reaction'] as String?,
+      reaction: json['reaction'],
       isDeleted: json['isDeleted'] as bool?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       text: json['text'] as String,

@@ -78,7 +78,7 @@ abstract class Message extends Equatable {
   final User author;
 
   /// reaction on message
-  final String? reaction;
+  final dynamic? reaction;
 
   /// isDeleted status for message
   final bool? isDeleted;
@@ -125,7 +125,7 @@ abstract class Message extends Equatable {
     bool? showStatus,
     bool? isDeleted,
     Status? status,
-    String? reaction,
+    dynamic? reaction,
     int? updatedAt,
   });
 

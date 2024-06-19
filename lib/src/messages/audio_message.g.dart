@@ -14,7 +14,7 @@ AudioMessage _$AudioMessageFromJson(Map<String, dynamic> json) => AudioMessage(
       metadata: json['metadata'] as Map<String, dynamic>?,
       mimeType: json['mimeType'] as String?,
       name: json['name'] as String,
-      reaction: json['reaction'] as String,
+      reaction: json['reaction'],
       isDeleted: json['isDeleted'] as bool,
       remoteId: json['remoteId'] as String?,
       repliedMessage: json['repliedMessage'] == null
