@@ -15,11 +15,10 @@ FileMessage _$FileMessageFromJson(Map<String, dynamic> json) => FileMessage(
       mimeType: json['mimeType'] as String?,
       name: json['name'] as String,
       remoteId: json['remoteId'] as String?,
-      repliedMessage: json['repliedMessage'] == null
-          ? null
-          : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
+      repliedMessage: json['repliedMessage'] == null ? null : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
       roomId: json['roomId'] as String?,
       reaction: json['reaction'],
+      reactionMsg: json['reactionMsg'],
       showStatus: json['showStatus'] as bool?,
       isDeleted: json['isDeleted'] as bool?,
       size: json['size'] as num,
@@ -48,6 +47,7 @@ Map<String, dynamic> _$FileMessageToJson(FileMessage instance) {
   writeNotNull('roomId', instance.roomId);
   writeNotNull('showStatus', instance.showStatus);
   writeNotNull('reaction', instance.reaction);
+  writeNotNull('reactionMsg', instance.reactionMsg);
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;

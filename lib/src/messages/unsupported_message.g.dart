@@ -18,6 +18,7 @@ UnsupportedMessage _$UnsupportedMessageFromJson(Map<String, dynamic> json) =>
           : Message.fromJson(json['repliedMessage'] as Map<String, dynamic>),
       roomId: json['roomId'] as String?,
       reaction: json['reaction'],
+      reactionMsg: json['reactionMsg'],
       showStatus: json['showStatus'] as bool?,
       isDeleted: json['isDeleted'] as bool?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
@@ -47,6 +48,7 @@ Map<String, dynamic> _$UnsupportedMessageToJson(UnsupportedMessage instance) {
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('reaction', instance.reaction);
+  writeNotNull('reactionMsg', instance.reactionMsg);
   writeNotNull('updatedAt', instance.updatedAt);
   return val;
 }

@@ -41,6 +41,7 @@ abstract class Message extends Equatable {
     this.showStatus,
     this.status,
     this.reaction,
+    this.reactionMsg,
     this.isDeleted,
     required this.type,
     this.updatedAt,
@@ -79,6 +80,8 @@ abstract class Message extends Equatable {
 
   /// reaction on message
   final dynamic? reaction;
+
+  final dynamic? reactionMsg;
 
   /// isDeleted status for message
   final bool? isDeleted;
@@ -126,6 +129,7 @@ abstract class Message extends Equatable {
     bool? isDeleted,
     Status? status,
     dynamic? reaction,
+    dynamic? reactionMsg,
     int? updatedAt,
   });
 

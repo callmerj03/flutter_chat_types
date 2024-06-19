@@ -21,6 +21,7 @@ TextMessage _$TextMessageFromJson(Map<String, dynamic> json) => TextMessage(
       roomId: json['roomId'] as String?,
       showStatus: json['showStatus'] as bool?,
       reaction: json['reaction'],
+  reactionMsg: json['reactionMsg'],
       isDeleted: json['isDeleted'] as bool?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       text: json['text'] as String,
@@ -50,6 +51,7 @@ Map<String, dynamic> _$TextMessageToJson(TextMessage instance) {
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
   writeNotNull('updatedAt', instance.updatedAt);
   writeNotNull('reaction', instance.reaction);
+  writeNotNull('reactionMsg', instance.reactionMsg);
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('previewData', instance.previewData?.toJson());
   val['text'] = instance.text;

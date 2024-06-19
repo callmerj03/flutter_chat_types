@@ -15,6 +15,7 @@ AudioMessage _$AudioMessageFromJson(Map<String, dynamic> json) => AudioMessage(
       mimeType: json['mimeType'] as String?,
       name: json['name'] as String,
       reaction: json['reaction'],
+      reactionMsg: json['reactionMsg'],
       isDeleted: json['isDeleted'] as bool,
       remoteId: json['remoteId'] as String?,
       repliedMessage: json['repliedMessage'] == null
@@ -51,6 +52,7 @@ Map<String, dynamic> _$AudioMessageToJson(AudioMessage instance) {
   writeNotNull('roomId', instance.roomId);
   writeNotNull('showStatus', instance.showStatus);
   writeNotNull('reaction', instance.reaction);
+  writeNotNull('reactionMsg', instance.reactionMsg);
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type]!;
