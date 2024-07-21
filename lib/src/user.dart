@@ -13,6 +13,9 @@ enum Role { admin, agent, moderator, user }
 abstract class User extends Equatable {
   /// Creates a user.
   const User._({
+    this.countryCode,
+    this.phone_number,
+    this.normalise_phone_number,
     this.createdAt,
     this.firstName,
     required this.id,
@@ -29,6 +32,9 @@ abstract class User extends Equatable {
     String? firstName,
     required String id,
     String? imageUrl,
+    String? countryCode,
+    String? phone_number,
+    String? normalise_phone_number,
     String? lastName,
     int? lastSeen,
     Map<String, dynamic>? metadata,
@@ -66,11 +72,23 @@ abstract class User extends Equatable {
   /// Updated user timestamp, in ms.
   final int? updatedAt;
 
+  /// country code
+  final String? countryCode;
+
+  /// phone number
+  final String? phone_number;
+
+  /// normalise phone number
+  final String? normalise_phone_number;
+
   /// Equatable props.
   @override
   List<Object?> get props => [
         createdAt,
         firstName,
+        countryCode,
+        phone_number,
+        normalise_phone_number,
         id,
         imageUrl,
         lastName,
@@ -85,6 +103,9 @@ abstract class User extends Equatable {
     String? firstName,
     String? id,
     String? imageUrl,
+    String? countryCode,
+    String? phone_number,
+    String? normalise_phone_number,
     String? lastName,
     int? lastSeen,
     Map<String, dynamic>? metadata,
@@ -104,6 +125,9 @@ class _User extends User {
     required super.id,
     super.imageUrl,
     super.lastName,
+    super.countryCode,
+    super.phone_number,
+    super.normalise_phone_number,
     super.lastSeen,
     super.metadata,
     super.role,
@@ -114,6 +138,9 @@ class _User extends User {
   User copyWith({
     dynamic createdAt = _Unset,
     dynamic firstName = _Unset,
+    dynamic countryCode = _Unset,
+    dynamic phone_number = _Unset,
+    dynamic normalise_phone_number = _Unset,
     String? id,
     dynamic imageUrl = _Unset,
     dynamic lastName = _Unset,
@@ -125,13 +152,14 @@ class _User extends User {
       _User(
         createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
         firstName: firstName == _Unset ? this.firstName : firstName as String?,
+        countryCode: countryCode == _Unset ? this.countryCode : countryCode as String?,
+        phone_number: phone_number == _Unset ? this.phone_number : phone_number as String?,
+        normalise_phone_number: normalise_phone_number == _Unset ? this.normalise_phone_number : normalise_phone_number as String?,
         id: id ?? this.id,
         imageUrl: imageUrl == _Unset ? this.imageUrl : imageUrl as String?,
         lastName: lastName == _Unset ? this.lastName : lastName as String?,
         lastSeen: lastSeen == _Unset ? this.lastSeen : lastSeen as int?,
-        metadata: metadata == _Unset
-            ? this.metadata
-            : metadata as Map<String, dynamic>?,
+        metadata: metadata == _Unset ? this.metadata : metadata as Map<String, dynamic>?,
         role: role == _Unset ? this.role : role as Role?,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
       );
